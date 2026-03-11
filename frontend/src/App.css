@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0f172a;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+}
+
+.card {
+
+  width: 800px;
+  background: #1e293b;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 40px rgba(0,0,0,0.6);
+
+}
+
+.title {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  color: white;
+}
+
+input {
+  margin-top: 10px;
+  width: 100%;
+}
+
+textarea {
+
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+
+  border-radius: 6px;
+  border: none;
+
+}
+
+.btn {
+
+  width: 100%;
+  padding: 12px;
+
+  background: #ef4444;
+  color: white;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 16px;
+  cursor: pointer;
+
+}
+
+.btn:hover {
+  background: #dc2626;
+}
+
+.results {
+
+  margin-top: 30px;
+  color: white;
+
+}
+
+.score {
+
+  color: #38bdf8;
+  text-align: center;
+  margin-bottom: 25px;
+
+}
+
+.skills-section {
+
+  display: flex;
+  justify-content: space-between;
+
+}
+
+ol {
+  padding-left: 20px;
+}
+
+.present {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.missing {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+select {
+
+width: 100%;
+padding: 10px;
+margin-top: 10px;
+
+border-radius: 6px;
+border: none;
+
+}
