@@ -1,11 +1,10 @@
-const pdfParse = require("pdf-parse");
-const extractSkills = require("./skillExtractor");
+import pdfParse from "pdf-parse";
+import extractSkills from "./skillExtractor.js";
 
 async function parseResume(fileBuffer) {
-
     const data = await pdfParse(fileBuffer);
 
-    const text = data.text;
+    const text = data.text || "";
 
     const skills = extractSkills(text);
 
@@ -15,4 +14,4 @@ async function parseResume(fileBuffer) {
     };
 }
 
-module.exports = parseResume;
+export default parseResume;

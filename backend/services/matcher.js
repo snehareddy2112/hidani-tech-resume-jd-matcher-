@@ -23,7 +23,4 @@ function calculateMatchingScore(resumeSkills, jdSkills) {
     return Math.round(score);
 }
 
-module.exports = {
-    analyzeSkills,
-    calculateMatchingScore
-};
+export { analyzeSkills, calculateMatchingScore };

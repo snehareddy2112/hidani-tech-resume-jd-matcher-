@@ -1,26 +1,53 @@
-const SKILLS = require("../utils/skills");
+import { SKILLS, SKILL_ALIASES } from "../utils/Skills.js";
 
 function extractSkills(text) {
 
     if (!text) return [];
 
-    const foundSkills = [];
+    const foundSkills = new Set();
 
-    const normalizedText = text.toLowerCase();
+    // Normalize text to handle punctuation issues
+    const normalizedText = text
+        .toLowerCase()
+        .replace(/[^a-z0-9+#.]/g, " ");
+
+    /* =========================
+       Match canonical skills
+       ========================= */
 
     SKILLS.forEach(skill => {
 
-        const skillLower = skill.toLowerCase();
+        const escapedSkill = skill
+            .toLowerCase()
+            .replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-        const regex = new RegExp(`\\b${skillLower}\\b`, "i");
+        const regex = new RegExp(`\\b${escapedSkill}\\b`, "i");
 
         if (regex.test(normalizedText)) {
-            foundSkills.push(skill);
+            foundSkills.add(skill);
         }
 
     });
 
-    return foundSkills;
+    /* =========================
+       Match alias skills
+       ========================= */
+
+    Object.entries(SKILL_ALIASES).forEach(([alias, realSkill]) => {
+
+        const escapedAlias = alias
+            .toLowerCase()
+            .replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+        const regex = new RegExp(`\\b${escapedAlias}\\b`, "i");
+
+        if (regex.test(normalizedText)) {
+            foundSkills.add(realSkill);
+        }
+
+    });
+
+    return [...foundSkills];
 }
 
-module.exports = extractSkills;
+export default extractSkills;

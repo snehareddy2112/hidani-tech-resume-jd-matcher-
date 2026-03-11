@@ -1,4 +1,4 @@
-const extractSkills = require("./skillExtractor");
+import extractSkills from "./skillExtractor.js";
 
 function extractSalary(text) {
 
@@ -33,4 +33,4 @@ function parseJD(text) {
     };
 }
 
-module.exports = parseJD;
+export default parseJD;

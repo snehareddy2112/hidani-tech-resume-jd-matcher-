@@ -1,5 +1,6 @@
 import express from "express";
-import multer from "multer";
+import fs from "fs";
+import path from "path";
 
 import parseResume from "../services/resumeParser.js";
 import parseJD from "../services/jdParser.js";
@@ -7,24 +8,36 @@ import { analyzeSkills, calculateMatchingScore } from "../services/matcher.js";
 
 const router = express.Router();
 
-const upload = multer({
-  storage: multer.memoryStorage()
-});
-
-router.post("/match", upload.single("resume"), async (req, res) => {
+router.get("/sample/:id", async (req, res) => {
 
   try {
 
-    if (!req.file) {
-      return res.status(400).json({ error: "Resume file required" });
+    const id = req.params.id;
+
+    const resumePath = path.join(
+      process.cwd(),
+      "samples",
+      `sample${id}`,
+      "resume.pdf"
+    );
+
+    const jdPath = path.join(
+      process.cwd(),
+      "samples",
+      `sample${id}`,
+      "jd.txt"
+    );
+
+    if (!fs.existsSync(resumePath) || !fs.existsSync(jdPath)) {
+
+      return res.status(404).json({
+        error: "Sample files not found"
+      });
+
     }
 
-    const resumeBuffer = req.file.buffer;
-    const jdText = req.body.jd;
-
-    if (!jdText) {
-      return res.status(400).json({ error: "Job description required" });
-    }
+    const resumeBuffer = fs.readFileSync(resumePath);
+    const jdText = fs.readFileSync(jdPath, "utf8");
 
     const resumeData = await parseResume(resumeBuffer);
     const jdData = parseJD(jdText);
@@ -49,9 +62,10 @@ router.post("/match", upload.single("resume"), async (req, res) => {
 
       matchingJobs: [
         {
-          jobId: "JD001",
+          jobId: `JD${String(id).padStart(3, "0")}`,
           role: jdData.role || "Software Engineer",
-          aboutRole: jdData.aboutRole || "Role extracted from job description",
+          aboutRole:
+            jdData.aboutRole || "Role extracted from job description",
 
           skillsAnalysis: skillsAnalysis,
           matchingScore: matchingScore
@@ -62,10 +76,10 @@ router.post("/match", upload.single("resume"), async (req, res) => {
 
   } catch (error) {
 
-    console.error("Match API error:", error);
+    console.error("Sample processing error:", error);
 
     res.status(500).json({
-      error: "Failed to process resume matching"
+      error: "Failed to process sample"
     });
 
   }
