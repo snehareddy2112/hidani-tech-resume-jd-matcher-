@@ -1,0 +1,77 @@
+Astra’s mission is to improve life on Earth from space by creating a
+healthier and more connected planet. Today, Astra offers one of the lowest
+cost-per-launch dedicated orbital launch services, and one of the
+industry’s leading flight-proven electric propulsion systems for satellites,
+the Astra Spacecraft Engine.
+The Team
+Software is at the forefront of how we operate at Astra. As a vertically
+integrated rocket company, every decision we make is data-driven: from
+CAD designs to the launch of a rocket, we look for patterns and
+relationships at each stage of our design, manufacturing, test, and
+operations. This unprecedented level of integration requires equally
+vertically integrated software that gives insight into topics that matter,
+guiding our decisions.
+The software team has always operated as a small, versatile team that
+punches above its weight. As we grow we want to maintain those crossfunctional technical skillsets and embrace diversity in backgrounds
+because sometimes writing the best rocket company software in the
+world is like programming a synthesizer, and other times it is like sanding
+the rust off of an old cabinet.
+The Opportunity
+As a Software Engineer at Astra, you’ll build systems that support rocket
+testing, manufacturing, and launch operations. You’ll work closely with
+hardware and operations teams to develop tools for automation, data
+collection, and real-time analysis. This is a high-impact role with broad
+technical scope and direct influence on critical engineering workflows.
+How You'll Fulfill Your Mission
+• Develop and maintain Python-based systems for automating
+rocket testing, manufacturing, and launch operations.
+• Build tools for real-time telemetry data collection and analysis to
+support rapid decision-making.
+• Collaborate with teams across engineering, manufacturing, and
+launch to identify software needs and ship impactful solutions.
+• Contribute to internal tools, APIs (REST/gRPC), and cloud-native
+infrastructure that enable fast iteration and high reliability.
+• Troubleshoot and improve systems that must operate under high
+complexity and extreme conditions.
+Why We Value You
+• 3+ years of experience in software engineering, including
+production-level Python development
+• Solid understanding of system design, data pipelines, and APIs
+• Experience with cloud-native services (e.g., AWS, Kubernetes,
+Docker) and telemetry or time-series systems
+• Familiarity with REST/gRPC APIs and common data serialization
+formats (e.g., JSON, YAML, Protobuf)
+• Proven ability to deliver software in high-stakes or cross-functional
+environments
+• Strong communication skills and a proactive mindset
+• Bachelor’s degree in Computer Science, Engineering, or a related
+field (or equivalent practical experience)
+Desired Multipliers
+• Experience in aerospace, robotics, or hardware-software systems
+• Exposure to TypeScript, Go, or C/C++
+• Open-source contributions or relevant side projects
+The pay range for this role is: $130,000 - $160,000 per year
+The stated compensation range reflects only the targeted base salary
+range in the San Francisco Bay Area and excludes additional earnings
+such as bonus and benefits. If your salary requirements fall outside of the
+range, we still encourage you to apply.
+You do not need to match every listed expectation to apply for this
+position. Here at Astra, we know that diverse perspectives foster the
+innovation we need to be successful, and we are committed to building a
+team that encompasses a variety of backgrounds, experiences, and skills.
+San Francisco Applicants: Astra will consider applicants with arrest and
+conviction records (criminal histories) in a manner consistent with the San
+Francisco Fair Chance Ordinance.
+ITAR Requirements: This position requires compliance with U.S.
+Government space technology trade restrictions, specifically the
+International Trafficking in Arms Regulations (ITAR), Export Administration
+Regulations (EAR) and additional regulations governing satellite, launch
+vehicle, missile, and other related technologies. All jobs restricted by
+these regulations will be contingent upon the applicant’s status as a
+documented U.S. Person or their ability to receive a trade license from the
+cognizant government agency; in addition to any required company
+background checks and in compliance with applicable U.S. and California
+laws. Similarly, positions requiring the ability to work on government
+contracts or a security clearance are also contingent upon the applicants
+ability to receive the appropriate clearance and be allowed to work on
+U.S. government contracts.
