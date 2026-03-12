@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
 
+const API_URL = "https://hidani-tech-resume-jd-matcher.onrender.com";
+
 function App() {
 
   const [resume, setResume] = useState(null);
@@ -28,7 +30,7 @@ function App() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:5000/api/match",
+        `${API_URL}/api/match`,
         formData
       );
 
@@ -36,12 +38,13 @@ function App() {
 
     } catch (error) {
 
-      console.error(error);
+      console.error(error.response?.data || error.message);
       alert("Error processing request");
 
     }
 
     setLoading(false);
+
   };
 
 
@@ -54,19 +57,20 @@ function App() {
       setLoading(true);
 
       const response = await axios.get(
-        `http://localhost:5000/api/sample/${sampleId}`
+        `${API_URL}/api/sample/${sampleId}`
       );
 
       setResult(response.data);
 
     } catch (error) {
 
-      console.error(error);
+      console.error(error.response?.data || error.message);
       alert("Sample not found");
 
     }
 
     setLoading(false);
+
   };
 
 
@@ -78,7 +82,8 @@ function App() {
 
         <h1 className="title">Resume Matcher</h1>
 
-        {/* SAMPLE DROPDOWN */}
+
+        {/* Sample Dropdown */}
 
         <div className="input-group">
 
@@ -109,10 +114,11 @@ function App() {
 
         </div>
 
+
         <hr style={{ margin: "25px 0", opacity: 0.3 }} />
 
 
-        {/* MANUAL MODE */}
+        {/* Manual Resume Upload */}
 
         <form onSubmit={handleSubmit}>
 
